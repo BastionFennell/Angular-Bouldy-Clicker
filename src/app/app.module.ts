@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,17 +9,9 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopItemComponent } from './shop-item/shop-item.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PetComponent,
-    ShopComponent,
-    ShopItemComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, PetComponent, ShopComponent, ShopItemComponent],
+  imports: [BrowserAnimationsModule, BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
