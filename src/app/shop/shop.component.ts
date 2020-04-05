@@ -23,7 +23,7 @@ export class ShopComponent implements OnInit {
       this.itemMemoCheck = this.itemService.items;
       this.itemMemo = Object.entries(this.itemService.items).map(
         ([key, value]) => ({
-          name: key,
+          id: key,
           ...value,
         })
       );

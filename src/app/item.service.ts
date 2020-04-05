@@ -6,7 +6,8 @@ export interface Item {
   base: number;
   description: string;
   factor: number;
-  name?: string;
+  id?: string;
+  name: string;
   owned: number;
   power: number;
 }
@@ -19,14 +20,16 @@ export class ItemService {
     nectar: {
       base: 10,
       description: 'Show Bouldy you really care! +1 step per click',
-      factor: 1.07,
+      factor: 1.17,
+      name: 'Nectar',
       owned: 0,
       power: 0,
     },
     zeus: {
       base: 10,
       description: 'The blessings of Zeus!',
-      factor: 1.07,
+      factor: 1.17,
+      name: "Zeus's Boon",
       owned: 0,
       power: 1,
     },

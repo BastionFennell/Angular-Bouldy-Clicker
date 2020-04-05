@@ -27,7 +27,7 @@ export class ShopItemComponent implements OnInit {
 
   onBuy = () => {
     console.log('BUY');
-    this.onBuyEvent.emit(this.item.name);
+    this.onBuyEvent.emit(this.item.id);
   };
 
   ngOnInit() {}
