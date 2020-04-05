@@ -1,6 +1,7 @@
 <main>
   <app-pet></app-pet>
-  <app-shop></app-shop>
+  <img class="shop__hamburger" [class.shop__hamburger--show]="!show" (click)="onToggleShow()" src="assets/hamburger-menu.svg" />
+  <app-shop class="shop" [class.shop--show]="show" [onToggleShow]="onToggleShow" [show]="show"></app-shop>
 </main>
 
 <router-outlet></router-outlet>

@@ -1,7 +1,10 @@
+<button class="shop__close-hamburger" (click)="onToggleShow()">
+  <div> x </div>
+</button>
 <div class="shop__step-counter">
   Steps: {{getSteps() | number:'0.0-0'}}
 </div>
-<div class="shop__item-list">
+<div class="shop__item-list" >
   <div *ngFor="let item of getItems()">
     <app-shop-item [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>
   </div>

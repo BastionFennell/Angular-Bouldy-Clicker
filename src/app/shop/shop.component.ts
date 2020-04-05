@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StepsService } from '../steps.service';
 import { Item, ItemService } from '../item.service';
 
@@ -8,6 +8,8 @@ import { Item, ItemService } from '../item.service';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
+  @Input() show: boolean;
+  @Input() onToggleShow: () => void;
   itemMemoCheck: { [key: string]: Item };
   itemMemo: Item[];
 

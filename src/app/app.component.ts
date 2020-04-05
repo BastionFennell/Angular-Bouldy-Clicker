@@ -9,6 +9,8 @@ import { ItemService } from './item.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  show = false;
+
   constructor(
     private stepsService: StepsService,
     private itemService: ItemService
@@ -26,6 +28,8 @@ export class AppComponent {
     const tickPower = this.itemService.getIncrement();
     this.stepsService.step(tickPower / 10);
   };
+
+  onToggleShow = () => (this.show = !this.show);
 
   ngOnDestroy() {
     this.subscription && this.subscription.unsubscribe();

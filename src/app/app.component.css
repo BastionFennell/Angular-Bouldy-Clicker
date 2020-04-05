@@ -4,11 +4,35 @@ main {
   background-size: cover;
   display: flex;
   justify-content: space-between;
-}
-
-app-shop {
-  background: rgba(0, 0, 0, .5);
   height: 100vh;
-  width: 40%;
 }
 
+.shop__hamburger {
+  background: rgba(0, 0, 0, .9);
+  border-radius: 5px;
+  display: none;
+  padding: 5px;
+  position: absolute;
+  transform: translateY(-200%);
+  transition: transform 0.5s ease;
+}
+
+.shop__hamburger.shop__hamburger--show {
+  transform: translateY(0);
+}
+
+.shop.shop--show {
+  transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+  .shop__hamburger {
+    display: block;
+    right: 15px;
+    top: 15px;
+  }
+
+  .shop {
+    transform: translateX(100%);
+  }
+}

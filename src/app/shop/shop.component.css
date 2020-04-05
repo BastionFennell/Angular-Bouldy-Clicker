@@ -1,6 +1,29 @@
 :host {
+  background: rgba(0, 0, 0, .5);
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  min-width: 400px;
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  width: 40%;
+}
+
+.shop__close-hamburger {
+  background: white;
+  border-radius: 5px;
+  display: none;
+  font-size: 40px;
+  line-height: 0;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.shop__close-hamburger div {
+  margin-top: -5px;
 }
 
 .shop__step-counter {
@@ -19,4 +42,26 @@
 
 .shop__item-list {
   overflow-y: scroll;
+}
+
+@media (max-width: 900px) {
+  :host {
+    position: absolute;
+    right: 0;
+  }
+
+  .shop__close-hamburger {
+    display: block;
+  }
+
+  .shop__step-counter {
+    margin-right: 80px;
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  :host {
+    width: 100%;
+  }
 }
