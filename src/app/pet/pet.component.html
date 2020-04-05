@@ -1,2 +1,4 @@
-<h2 [class.show]="!clickedOnce"> Click Bouldy to push him up the steps! </h2>
+<div class="pet__instructions" [class.show]="!clickedOnce">
+  <h2> Click Bouldy to push him up the steps! </h2>
+</div>
 <img [@clicked]="clicked" (click)="onClick()" src="assets/Bouldy.png" />
