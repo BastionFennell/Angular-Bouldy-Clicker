@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PetComponent } from './pet/pet.component';
+import { ShopComponent } from './shop/shop.component';
+import { ShopItemComponent } from './shop-item/shop-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PetComponent,
+    ShopComponent,
+    ShopItemComponent
   ],
   imports: [
     BrowserModule,

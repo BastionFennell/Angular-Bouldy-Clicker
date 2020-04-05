@@ -1,0 +1,6 @@
+<div class="shop__step-counter">
+  Steps: {{getSteps()}}
+</div>
+<div *ngFor="let item of getItems()">
+  <app-shop-item [item]="item"></app-shop-item>
+</div>
