@@ -26,7 +26,7 @@ export class ItemService {
   constructor(private stepsService: StepsService) {}
 
   buy = (itemName: string) => {
-    //this.stepsService.pay(getPrice(this.items[itemName]));
+    this.stepsService.pay(getPrice(this.items[itemName]));
     this.items[itemName].owned++;
   };
 }
