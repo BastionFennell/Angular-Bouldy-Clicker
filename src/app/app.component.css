@@ -1,4 +1,7 @@
 main {
+  background-image: url('../assets/tartarus.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
 }
