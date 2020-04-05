@@ -1,5 +1,6 @@
 import { Item } from './item.service';
 
 export function getPrice(item: Item) {
-  return item.base * item.factor ** item.owned;
+  const rawPrice = item.base * item.factor ** item.owned;
+  return Math.round(rawPrice);
 }
