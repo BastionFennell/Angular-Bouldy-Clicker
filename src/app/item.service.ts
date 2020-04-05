@@ -8,6 +8,7 @@ export interface Item {
   factor: number;
   name?: string;
   owned: number;
+  power: number;
 }
 
 @Injectable({
@@ -20,6 +21,14 @@ export class ItemService {
       description: 'Show Bouldy you really care! +1 step per click',
       factor: 1.07,
       owned: 0,
+      power: 0,
+    },
+    zeus: {
+      base: 10,
+      description: 'The blessings of Zeus!',
+      factor: 1.07,
+      owned: 0,
+      power: 1,
     },
   };
 
@@ -27,7 +36,15 @@ export class ItemService {
 
   buy = (itemName: string) => {
     this.stepsService.pay(getPrice(this.items[itemName]));
-    this.items[itemName].owned++;
+    const item = this.items[itemName];
+
+    this.items = {
+      ...this.items,
+      [itemName]: {
+        ...item,
+        owned: item.owned + 1,
+      },
+    };
   };
 
   getClickPower = () => {
@@ -35,5 +52,12 @@ export class ItemService {
     const modifier = this.items.nectar.owned;
 
     return base + modifier;
+  };
+
+  getIncrement = () => {
+    return Object.values(this.items).reduce(
+      (acc: number, item: Item) => acc + item.owned * item.power,
+      0
+    );
   };
 }

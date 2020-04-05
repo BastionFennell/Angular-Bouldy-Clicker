@@ -1,5 +1,5 @@
 <div class="shop__step-counter">
-  Steps: {{getSteps()}}
+  Steps: {{getSteps() | number:'0.0-0'}}
 </div>
 <div *ngFor="let item of getItems()">
   <app-shop-item [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>

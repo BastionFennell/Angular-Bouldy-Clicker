@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StepsService } from '../steps.service';
-import { ItemService } from '../item.service';
+import { Item, ItemService } from '../item.service';
 
 @Component({
   selector: 'app-shop',
@@ -8,6 +8,9 @@ import { ItemService } from '../item.service';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
+  itemMemoCheck: { [key: string]: Item };
+  itemMemo: Item[];
+
   constructor(
     private stepsService: StepsService,
     private itemService: ItemService
@@ -16,10 +19,17 @@ export class ShopComponent implements OnInit {
   ngOnInit() {}
 
   getItems = () => {
-    return Object.entries(this.itemService.items).map(([key, value]) => ({
-      name: key,
-      ...value,
-    }));
+    if (this.itemService.items !== this.itemMemoCheck) {
+      this.itemMemoCheck = this.itemService.items;
+      this.itemMemo = Object.entries(this.itemService.items).map(
+        ([key, value]) => ({
+          name: key,
+          ...value,
+        })
+      );
+    }
+
+    return this.itemMemo;
   };
   getSteps = () => this.stepsService.steps;
   onBuy = (item: string) => this.itemService.buy(item);
