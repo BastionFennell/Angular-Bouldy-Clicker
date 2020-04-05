@@ -24,6 +24,8 @@ export class AppComponent {
     this.subscription = source.subscribe(this.onTick);
   }
 
+  getSteps = () => this.stepsService.steps;
+
   onTick = () => {
     const tickPower = this.itemService.getIncrement();
     this.stepsService.step(tickPower / 10);
