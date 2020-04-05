@@ -26,7 +26,6 @@ export class ShopItemComponent implements OnInit {
   getPrice = () => getPrice(this.item);
 
   onBuy = () => {
-    console.log('BUY');
     this.onBuyEvent.emit(this.item.id);
   };
 
