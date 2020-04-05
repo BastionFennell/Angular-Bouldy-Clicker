@@ -44,8 +44,8 @@ export class ItemService {
       factor: 1.17,
       name: "Athena's Boon",
       owned: 0,
-      power: 25,
-      subtext: 'Adds 25 step per second',
+      power: 10,
+      subtext: 'Adds 10 step per second',
     },
     poseidon: {
       base: 100,
@@ -54,8 +54,8 @@ export class ItemService {
       factor: 1.17,
       name: "Poseidon's Boon",
       owned: 0,
-      power: 10,
-      subtext: 'Adds 10 steps per second',
+      power: 25,
+      subtext: 'Adds 25 steps per second',
     },
     ares: {
       base: 500,
@@ -73,8 +73,8 @@ export class ItemService {
       factor: 1.17,
       name: "Aphrodite's Boon",
       owned: 0,
-      power: 25,
-      subtext: 'Adds 25 steps per second',
+      power: 100,
+      subtext: 'Adds 100 steps per second',
     },
     artemis: {
       base: 5000,
@@ -82,8 +82,8 @@ export class ItemService {
       factor: 1.17,
       name: "Artemis' Boon",
       owned: 0,
-      power: 50,
-      subtext: 'Adds 50 steps per second',
+      power: 250,
+      subtext: 'Adds 250 steps per second',
     },
     zeus: {
       base: 10000,
@@ -91,8 +91,8 @@ export class ItemService {
       factor: 1.17,
       name: "Zeus's Boon",
       owned: 0,
-      power: 100,
-      subtext: 'Adds 100 steps per second',
+      power: 500,
+      subtext: 'Adds 500 steps per second',
     },
     demeter: {
       base: 50000,
@@ -100,8 +100,8 @@ export class ItemService {
       factor: 1.17,
       name: "Demeters's Boon",
       owned: 0,
-      power: 250,
-      subtext: 'Adds 250 steps per second',
+      power: 1000,
+      subtext: 'Adds 1000 steps per second',
     },
     chaos: {
       base: 1000000,
@@ -109,8 +109,8 @@ export class ItemService {
       factor: 1.17,
       name: "Chaos's Boon",
       owned: 0,
-      power: 1387,
-      subtext: 'Adds 1387 steps per second',
+      power: 2387,
+      subtext: 'Adds 2387 steps per second',
     },
     daedalus: {
       base: 2000000,
@@ -118,8 +118,8 @@ export class ItemService {
       factor: 1.17,
       name: "Daedalus's Boon",
       owned: 0,
-      power: 2000,
-      subtext: 'Adds 2000 steps per second',
+      power: 5000,
+      subtext: 'Adds 5000 steps per second',
     },
     sisyphus: {
       base: 5000000,
@@ -128,8 +128,8 @@ export class ItemService {
       factor: 1.17,
       name: "Sisyphus' Boon",
       owned: 0,
-      power: 5000,
-      subtext: 'Adds 5000 steps per second',
+      power: 10000,
+      subtext: 'Adds 10000 steps per second',
     },
   };
 
