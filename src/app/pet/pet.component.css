@@ -5,3 +5,19 @@ img {
           drop-shadow(-10px -10px 0 white);
   margin: 40px;
 }
+
+h2 {
+  color: white;
+  font-family: sans-serif;
+  margin: 40px;
+  max-height: 0;
+  overflow-y: hidden;
+  transform: translateX(-200%);
+  transition: transform 0.5s ease,
+              max-height 0.5s ease 0.2s;
+}
+
+h2.show {
+  max-height: 50px;
+  transform: translateX(0);
+}

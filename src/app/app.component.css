@@ -48,7 +48,7 @@ main {
 
 @media (max-width: 900px) {
   .pet-container {
-  justify-content: space-around;
+    justify-content: space-around;
     width: 100%;
   }
 

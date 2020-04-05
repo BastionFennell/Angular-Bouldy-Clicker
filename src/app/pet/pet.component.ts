@@ -30,6 +30,7 @@ import { ItemService } from '../item.service';
   styleUrls: ['./pet.component.css'],
 })
 export class PetComponent implements OnInit {
+  clickedOnce = false;
   clicked = false;
   constructor(
     private stepsService: StepsService,
@@ -40,6 +41,7 @@ export class PetComponent implements OnInit {
   ngOnInit() {}
   onClick() {
     this.clicked = false;
+    this.clickedOnce = true;
     this.changeDetectorRef.detectChanges();
     this.stepsService.step(this.itemService.getClickPower());
     this.clicked = true;
