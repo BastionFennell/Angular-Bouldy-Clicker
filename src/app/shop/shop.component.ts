@@ -22,4 +22,5 @@ export class ShopComponent implements OnInit {
     }));
   };
   getSteps = () => this.stepsService.steps;
+  onBuy = (item: string) => this.itemService.buy(item);
 }

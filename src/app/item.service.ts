@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { StepsService } from './steps.service';
+import { getPrice } from './utils';
 
 export interface Item {
   base: number;
@@ -21,7 +23,10 @@ export class ItemService {
     },
   };
 
-  constructor() {}
+  constructor(private stepsService: StepsService) {}
 
-  buy = (item: string) => console.log(item);
+  buy = (itemName: string) => {
+    //this.stepsService.pay(getPrice(this.items[itemName]));
+    this.items[itemName].owned++;
+  };
 }

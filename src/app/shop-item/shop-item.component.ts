@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { StepsService } from '../steps.service';
-import { Item, ItemService } from '../item.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { getPrice } from '../utils';
+import { Item } from '../item.service';
 
 @Component({
   selector: 'app-shop-item',
@@ -9,17 +9,16 @@ import { Item, ItemService } from '../item.service';
 })
 export class ShopItemComponent implements OnInit {
   @Input() item: Item;
+  @Input() steps: number;
+  @Output() onBuyEvent = new EventEmitter<string>();
 
-  constructor(
-    private stepsService: StepsService,
-    private itemService: ItemService
-  ) {}
+  constructor() {}
 
-  canBuy = () => this.stepsService.steps >= this.getPrice();
+  canBuy = () => this.steps >= getPrice(this.item);
 
-  getPrice = () => this.item.base * this.item.factor ** this.item.owned;
+  getPrice = () => getPrice(this.item);
 
-  onBuy = () => this.itemService.buy(this.item.name);
+  onBuy = () => this.onBuyEvent.emit(this.item.name);
 
   ngOnInit() {}
 }
