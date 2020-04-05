@@ -29,7 +29,8 @@ export class ItemService {
     },
     dionysus: {
       base: 10,
-      description: 'Sometimes, you just wanna party',
+      description:
+        'Sometimes, you just wanna party with your best friend, Bouldy',
       factor: 1.17,
       name: "Dionysus' Boon",
       owned: 0,
@@ -48,7 +49,8 @@ export class ItemService {
     },
     poseidon: {
       base: 100,
-      description: 'Broseidon, King of the Brocean',
+      description:
+        'Maybe some extra knockback will help getting Bouldy up the steps?',
       factor: 1.17,
       name: "Poseidon's Boon",
       owned: 0,
@@ -66,7 +68,8 @@ export class ItemService {
     },
     aphrodite: {
       base: 1000,
-      description: 'If you wanna be my lover',
+      description:
+        'Bouldy may be playing hard to get, but Aphrodite is also patient',
       factor: 1.17,
       name: "Aphrodite's Boon",
       owned: 0,
@@ -75,7 +78,7 @@ export class ItemService {
     },
     artemis: {
       base: 5000,
-      description: "I'll teach you my hunting secrets",
+      description: "I'll teach only you and Bouldy my hunting secrets",
       factor: 1.17,
       name: "Artemis' Boon",
       owned: 0,
@@ -84,7 +87,7 @@ export class ItemService {
     },
     zeus: {
       base: 10000,
-      description: 'The blessings of the all-mighty Zeus!',
+      description: 'Rock beats lightning, every time',
       factor: 1.17,
       name: "Zeus's Boon",
       owned: 0,
@@ -93,7 +96,7 @@ export class ItemService {
     },
     demeter: {
       base: 50000,
-      description: 'The harsh winter continues',
+      description: 'Though Bouldy weathers on, the harsh winter continues',
       factor: 1.17,
       name: "Demeters's Boon",
       owned: 0,
