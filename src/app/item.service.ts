@@ -10,6 +10,7 @@ export interface Item {
   name: string;
   owned: number;
   power: number;
+  subtext: string;
 }
 
 @Injectable({
@@ -19,11 +20,12 @@ export class ItemService {
   items = {
     nectar: {
       base: 10,
-      description: 'Show Bouldy you really care! +1 step per click',
+      description: 'Show Bouldy you really care!',
       factor: 1.17,
       name: 'Nectar',
       owned: 0,
       power: 0,
+      subtext: 'Adds 1 step per click',
     },
     zeus: {
       base: 10,
@@ -32,6 +34,7 @@ export class ItemService {
       name: "Zeus's Boon",
       owned: 0,
       power: 1,
+      subtext: 'Adds 1 step per second',
     },
   };
 
