@@ -29,4 +29,11 @@ export class ItemService {
     this.stepsService.pay(getPrice(this.items[itemName]));
     this.items[itemName].owned++;
   };
+
+  getClickPower = () => {
+    const base = 1;
+    const modifier = this.items.nectar.owned;
+
+    return base + modifier;
+  };
 }
