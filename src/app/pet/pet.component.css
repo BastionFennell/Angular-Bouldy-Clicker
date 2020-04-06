@@ -9,6 +9,11 @@ img {
           drop-shadow(10px -10px 0 white)
           drop-shadow(-10px -10px 0 white);
   margin: 40px;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
 }
 
 h2 {

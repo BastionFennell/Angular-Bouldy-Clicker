@@ -1,4 +1,9 @@
 <div class="pet__instructions" [class.show]="!clickedOnce">
   <h2> Click Bouldy to push him up the steps! </h2>
 </div>
-<img [@clicked]="clicked" (click)="onClick()" src="assets/Bouldy.png" />
+<img
+  [@clicked]="clicked"
+  (click)="onClick()"
+  oncontextmenu="return false;"
+  src="assets/Bouldy.png"
+/>
