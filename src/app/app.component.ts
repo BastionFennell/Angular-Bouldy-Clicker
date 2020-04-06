@@ -25,6 +25,7 @@ export class AppComponent {
   }
 
   getSteps = () => this.stepsService.steps;
+  getStepsPerSecond = () => this.itemService.getIncrement();
 
   onTick = () => {
     const tickPower = this.itemService.getIncrement();

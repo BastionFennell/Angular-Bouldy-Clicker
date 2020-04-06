@@ -1,7 +1,10 @@
 <main>
   <div class="pet-container">
     <app-pet></app-pet>
-    <div class="step-counter"> {{getSteps() | number:'0.0-0'}} Steps </div>
+    <div class="step-counter">
+      {{getSteps() | number:'0.0-0'}} Steps
+      <div class="shop__steps-per-second"> {{getStepsPerSecond()}} Steps Per Second </div>
+    </div>
   </div>
   <img class="shop__hamburger" [class.shop__hamburger--show]="!show" (click)="onToggleShow()" src="assets/hamburger-menu.svg" />
   <app-shop class="shop" [class.shop--show]="show" [onToggleShow]="onToggleShow" [show]="show"></app-shop>

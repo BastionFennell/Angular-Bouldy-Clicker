@@ -3,6 +3,7 @@
 </button>
 <div class="shop__step-counter">
   Steps: {{getSteps() | number:'0.0-0'}}
+  <div class="shop__steps-per-second"> {{getStepsPerSecond()}} Steps Per Second </div>
 </div>
 <div class="shop__item-list" >
   <div *ngFor="let item of getItems()">

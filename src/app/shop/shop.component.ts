@@ -34,5 +34,6 @@ export class ShopComponent implements OnInit {
     return this.itemMemo;
   };
   getSteps = () => this.stepsService.steps;
+  getStepsPerSecond = () => this.itemService.getIncrement();
   onBuy = (item: string) => this.itemService.buy(item);
 }
