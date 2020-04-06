@@ -34,3 +34,11 @@ h2 {
   max-height: 100px;
   transform: translateX(0);
 }
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 20px;
+    margin-top: 60px;
+    -webkit-text-stroke-width: 1px;
+  }
+}
