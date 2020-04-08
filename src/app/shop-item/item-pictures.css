@@ -1,3 +1,10 @@
-.shop__shop-item-image--nectar {
+.shop__shop-item-image.shop__shop-item-image--nectar {
   background-image: url('../../assets/nectar.png');
+  height: 90px;
+  margin: 10px 20px;
+  width: 90px;
+}
+
+.shop__shop-item-image.shop__shop-item-image--dionysus {
+  background-image: url('../../assets/dionysus.png');
 }

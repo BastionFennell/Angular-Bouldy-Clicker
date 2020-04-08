@@ -1,4 +1,4 @@
-<div class="shop__shop-item shop__shop-item--nectar" (click)="onBuy()" *ngIf="item.id === 'nectar'">
+<div class="shop__shop-item shop__shop-item--nectar" (click)="onBuy()">
   <div [class]="'shop__shop-item-image shop__shop-item-image--' + item.id"></div>
   <div class="shop__shop-item-info">
     <h3> {{item.name}} </h3>
@@ -9,16 +9,4 @@
   <div class="shop__shop-item-owned">
     {{item.owned}}
   </div>
-</div>
-
-<div class="shop__shop-item" *ngIf="item.id !== 'nectar'">
-  <div class="shop__shop-item-owned">
-    {{item.owned}}
-  </div>
-  <div class="shop__shop-item-info">
-    <h3> {{item.name}} </h3>
-    <div> {{item.description}} </div>
-    <div class="shop__shop-item-subtext"> {{item.subtext}} </div>
-  </div>
-  <button [disabled]="!canBuy()" (click)="onBuy()"> {{getPrice()}} Steps </button>
 </div>

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class StepsService {
-  steps = 0;
+  steps = 1000000;
 
   pay(stepDecrement: number) {
     this.steps -= stepDecrement;
