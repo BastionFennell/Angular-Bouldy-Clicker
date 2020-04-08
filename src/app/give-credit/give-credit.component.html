@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Welcome to Bouldy Clicker!</h1>
+<mat-dialog-content>
+  <p>This is a fan-made game based on Supergiant Games' incredible new rogue-lite: Hades.</p>
+  <p>If you like what you see here, make sure to go and buy the game!</p>
+</mat-dialog-content>
+<div mat-dialog-actions align="end">
+  <a class="give-credit__link" href="https://store.steampowered.com/app/1145360/Hades/" rel="noopener noreferrer" target="_blank">
+    <button mat-button>Steam Page</button>
+  </a>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
+</div>

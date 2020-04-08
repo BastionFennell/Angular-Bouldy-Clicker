@@ -1,7 +1,11 @@
 import { interval, Subscription } from 'rxjs';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { StepsService } from './steps.service';
 import { ItemService } from './item.service';
+
+import { GiveCreditComponent } from './give-credit/give-credit.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +17,8 @@ export class AppComponent {
 
   constructor(
     private stepsService: StepsService,
-    private itemService: ItemService
+    private itemService: ItemService,
+    public dialog: MatDialog
   ) {}
 
   title = 'Bouldy Clicker';
@@ -23,6 +28,14 @@ export class AppComponent {
     const source = interval(100);
     this.subscription = source.subscribe(this.onTick);
   }
+
+  ngAfterViewInit() {
+    setTimeout(() => this.openModal());
+  }
+
+  openModal = () => {
+    this.dialog.open(GiveCreditComponent);
+  };
 
   getSteps = () => this.stepsService.steps;
   getStepsPerSecond = () => this.itemService.getIncrement();
