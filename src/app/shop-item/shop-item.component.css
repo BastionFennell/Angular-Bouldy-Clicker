@@ -19,10 +19,12 @@ h3 {
 .shop__shop-item {
   background: white;
   border-radius: 5px;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   margin: 10px 15px;
   padding: 5px 10px;
+  user-select: none;
 }
 
 .shop__shop-item-owned {
