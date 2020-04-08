@@ -14,6 +14,29 @@ main {
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+.inspired {
+  align-self: flex-start;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: serif;
+  font-size: 19px;
+  position: fixed;
+  bottom: -15px;
+  left: 10px;
+}
+
+.inspired img {
+  filter: drop-shadow(1px 1px 0 white)
+          drop-shadow(-1px 1px 0 white)
+          drop-shadow(1px -1px 0 white)
+          drop-shadow(-1px -1px 0 white);
+  height: 80px;
+  margin-left: -8px;
+  margin-top: -14px;
 }
 
 .step-counter {
@@ -59,6 +82,15 @@ main {
 @media (max-width: 900px) {
   .pet-container {
     width: 100%;
+  }
+
+  .inspired {
+    flex-direction: row;
+  }
+
+  .inspired__text {
+    padding-top: 10px;
+    padding-right: 5px;
   }
 
   .step-counter {
