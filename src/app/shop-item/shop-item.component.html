@@ -1,4 +1,4 @@
-<div class="shop__shop-item shop__shop-item--nectar" (click)="onBuy()">
+<div class="shop__shop-item" [class.shop__shop-item--disabled]="!canBuy()" (click)="onBuy()">
   <div [class]="'shop__shop-item-image shop__shop-item-image--' + item.id"></div>
   <div class="shop__shop-item-info">
     <h3> {{item.name}} </h3>
