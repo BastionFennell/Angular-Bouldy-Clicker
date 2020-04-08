@@ -25,6 +25,9 @@ export class AppComponent {
   subscription: Subscription;
 
   ngOnInit() {
+    if (localStorage.getItem('version')) {
+      this.loadSave();
+    }
     const source = interval(100);
     this.subscription = source.subscribe(this.onTick);
   }
@@ -40,9 +43,23 @@ export class AppComponent {
   getSteps = () => this.stepsService.steps;
   getStepsPerSecond = () => this.itemService.getIncrement();
 
-  onTick = () => {
+  loadSave = () => {
+    const steps = parseInt(localStorage.getItem('steps'), 10);
+    const items = JSON.parse(localStorage.getItem('items'));
+
+    this.stepsService.load(steps);
+    this.itemService.load(items);
+  };
+
+  onTick = (ticks: number) => {
     const tickPower = this.itemService.getIncrement();
     this.stepsService.step(tickPower / 10);
+
+    if (ticks % 10 === 0) {
+      localStorage.setItem('steps', this.stepsService.steps.toString());
+      localStorage.setItem('items', JSON.stringify(this.itemService.items));
+      localStorage.setItem('version', '1');
+    }
   };
 
   onToggleShow = () => (this.show = !this.show);

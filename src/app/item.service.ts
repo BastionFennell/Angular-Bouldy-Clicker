@@ -135,6 +135,10 @@ export class ItemService {
 
   constructor(private stepsService: StepsService) {}
 
+  load = (items: any) => {
+    this.items = items;
+  };
+
   buy = (itemName: string) => {
     this.stepsService.pay(getPrice(this.items[itemName]));
     const item = this.items[itemName];
