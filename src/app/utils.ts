@@ -6,10 +6,10 @@ export function getPrice(item: Item) {
 }
 
 export function formatSteps(steps: number) {
-  const [smallNumberString, exponentString] = steps.toExponential().split('e');
+  const [smallNumberString, exponentString] = steps.toExponential().split('e+');
 
   const exponent = parseInt(exponentString, 10);
-  const smallNumber = parseInt(smallNumberString, 10);
+  const smallNumber = parseFloat(smallNumberString);
 
   if (exponent <= 5) return numberWithCommas(steps.toFixed(0));
 
