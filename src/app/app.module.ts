@@ -11,6 +11,7 @@ import { PetComponent } from './pet/pet.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShopItemComponent } from './shop-item/shop-item.component';
 import { GiveCreditComponent } from './give-credit/give-credit.component';
+import { StepCounterComponent } from './step-counter/step-counter.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { GiveCreditComponent } from './give-credit/give-credit.component';
     ShopComponent,
     ShopItemComponent,
     GiveCreditComponent,
+    StepCounterComponent,
   ],
   entryComponents: [GiveCreditComponent],
   imports: [
