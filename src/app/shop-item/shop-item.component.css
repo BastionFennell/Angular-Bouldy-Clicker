@@ -48,6 +48,7 @@ h3 {
 }
 
 .shop__shop-item-image {
+  align-self: flex-end;
   background-size: cover;
   flex-shrink: 0;
   height: 125px;

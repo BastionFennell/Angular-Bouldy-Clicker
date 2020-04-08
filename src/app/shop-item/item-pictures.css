@@ -8,3 +8,50 @@
 .shop__shop-item-image.shop__shop-item-image--dionysus {
   background-image: url('../../assets/dionysus.png');
 }
+
+.shop__shop-item-image.shop__shop-item-image--athena {
+  background-image: url('../../assets/athena.png');
+}
+
+.shop__shop-item-image.shop__shop-item-image--poseidon {
+  background-image: url('../../assets/poseidon.png');
+  background-position-x: -40px;
+}
+
+.shop__shop-item-image.shop__shop-item-image--ares {
+  background-image: url('../../assets/ares.png');
+}
+
+.shop__shop-item-image.shop__shop-item-image--aphrodite {
+  background-image: url('../../assets/aphrodite.png');
+  background-position-y: -30px;
+}
+
+.shop__shop-item-image.shop__shop-item-image--artemis {
+  background-image: url('../../assets/artemis.png');
+}
+
+.shop__shop-item-image.shop__shop-item-image--zeus {
+  background-image: url('../../assets/zeus.png');
+  background-position-x: -5px;
+}
+
+.shop__shop-item-image.shop__shop-item-image--demeter {
+  background-image: url('../../assets/demeter.png');
+}
+
+.shop__shop-item-image.shop__shop-item-image--chaos {
+  background-image: url('../../assets/chaos.png');
+}
+
+.shop__shop-item-image.shop__shop-item-image--daedalus {
+  background-image: url('../../assets/daedalus.png');
+  height: 90px;
+  margin: 10px 20px;
+  width: 90px;
+}
+
+.shop__shop-item-image.shop__shop-item-image--sisyphus {
+  background-image: url('../../assets/sisyphus.png');
+  background-position-x: -5px;
+}
