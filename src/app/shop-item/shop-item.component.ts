@@ -13,12 +13,14 @@ import { Item } from '../item.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-shop-item',
   templateUrl: './shop-item.component.html',
-  styleUrls: ['./shop-item.component.css'],
+  styleUrls: ['./item-pictures.css', './shop-item.component.css'],
 })
 export class ShopItemComponent implements OnInit {
   @Input() item: Item;
   @Input() steps: number;
   @Output() onBuyEvent = new EventEmitter<string>();
+  url: string;
+
   constructor() {}
 
   canBuy = () => this.steps >= getPrice(this.item);
@@ -26,7 +28,9 @@ export class ShopItemComponent implements OnInit {
   getPrice = () => getPrice(this.item);
 
   onBuy = () => {
-    this.onBuyEvent.emit(this.item.id);
+    if (this.canBuy()) {
+      this.onBuyEvent.emit(this.item.id);
+    }
   };
 
   ngOnInit() {}

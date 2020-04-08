@@ -41,5 +41,28 @@ h3 {
 }
 
 .shop__shop-item-info {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+}
+
+.shop__shop-item--nectar {
+  align-items: inherit;
+}
+
+.shop__shop-item--nectar h3 {
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.shop__shop-item-image {
+  background-size: cover;
+  height: 90px;
+  margin: 10px;
+  width: 90px;
+}
+
+.shop__shop-item-price {
+ margin-top: auto;
+ padding-bottom: 10px;
 }
