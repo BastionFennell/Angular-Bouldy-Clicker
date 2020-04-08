@@ -45,6 +45,7 @@
 }
 
 .shop__shop-item-image.shop__shop-item-image--daedalus {
+  align-self: center;
   background-image: url('../../assets/daedalus.png');
   height: 90px;
   margin: 10px 20px;
