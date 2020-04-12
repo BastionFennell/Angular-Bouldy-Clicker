@@ -13,6 +13,11 @@ export class SettingsComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
+  onClear(): void {
+    this.data.clearData();
+    this.dialogRef.close();
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }

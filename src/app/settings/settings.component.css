@@ -2,3 +2,19 @@
   height: 90vh;
   width: 95vw;
 }
+
+.settings__clear-data-text {
+  color: #CC3232;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.settings__clear-data button {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 15px 10px;
+  background: #CC3232;
+  font-size: 20px;
+  border-radius: 5px;
+}
