@@ -1,4 +1,4 @@
-<div class="speech">
+<div (click)="close()" [class]="'speech speech__' + speaker.name">
   <div class="speech__speaker">
     <img [src]="speaker.picture" />
   </div>

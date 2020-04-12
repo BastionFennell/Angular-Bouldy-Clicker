@@ -22,6 +22,10 @@ export class SpeechAreaComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
   ngOnInit() {
     this.event = events[this.data.eventOwner][this.data.eventName];
     this.speaker = speakers[this.event.speaker];

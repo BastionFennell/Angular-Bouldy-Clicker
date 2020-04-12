@@ -20,6 +20,13 @@
   width: 40vw;
 }
 
+.speech__Poseidon .speech__speaker img {
+  width: 80vw;
+  margin-left: -20vw;
+  margin-right: -30vw;
+  max-width: 1000px;
+}
+
 .speech__background {
   background-image: url('../../assets/text-area.png');
   background-repeat: no-repeat;
@@ -93,6 +100,11 @@
   .speech__speaker {
     position: absolute;
     width: 100vw;
+  }
+
+  .speech__Poseidon .speech__speaker img {
+    width: 200vw;
+    margin-left: -45vw;
   }
 
   .speech__speaker img {
