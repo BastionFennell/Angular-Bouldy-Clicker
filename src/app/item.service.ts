@@ -165,6 +165,19 @@ export class ItemService {
     };
   };
 
+  step = (steps: number) => {
+    const keys = Object.keys(this.items);
+    const length = keys.length;
+    for (let i = 0; i < length; i++) {
+      const item = this.items[keys[i]];
+      if (!item.revealed && item.base <= steps) {
+        item.revealed = true;
+      } else if (item.base > steps) {
+        break;
+      }
+    }
+  };
+
   getClickPower = () => {
     const base = 1;
     const modifier = this.items.nectar.owned;

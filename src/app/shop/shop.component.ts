@@ -31,6 +31,7 @@ export class ShopComponent implements OnInit {
         ...value,
       }));
   };
+
   getUnrevealedItems = () => {
     return Object.entries(this.itemService.items)
       .filter(([key, value]) => !value.revealed)
@@ -42,7 +43,8 @@ export class ShopComponent implements OnInit {
   };
 
   getItems = () => {
-    if ((this.itemMemoCheck = this.itemService.items)) {
+    if (this.itemMemoCheck !== this.itemService.items) {
+      console.log('Redoot');
       this.itemMemoCheck = this.itemService.items;
       this.itemMemo = this.getRevealedItems().concat(this.getUnrevealedItems());
     }
