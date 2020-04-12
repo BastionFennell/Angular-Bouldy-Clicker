@@ -1,8 +1,39 @@
 import { Item } from './item.service';
 
-export function getPrice(item: Item) {
-  const rawPrice = item.base * item.factor ** item.owned;
+export function getBuyAmount(
+  item: Item,
+  amount: number | string,
+  steps: number
+) {
+  let amountToBuy = 0;
+  if (amount === 'max') {
+    amountToBuy = getMaxToBuy(item, steps);
+  } else {
+    amountToBuy = amount as number;
+  }
+
+  return amountToBuy;
+}
+
+export function getPrice(item: Item, amount: number | string, steps: number) {
+  let amountToBuy = getBuyAmount(item, amount, steps);
+
+  const rawPrice =
+    (item.base *
+      (item.factor ** item.owned * (item.factor ** amountToBuy - 1))) /
+    (item.factor - 1);
+  // const rawPrice = item.base * item.factor ** item.owned;
   return Math.round(rawPrice);
+}
+
+export function log(b: number, n: number) {
+  return Math.log(n) / Math.log(b);
+}
+
+export function getMaxToBuy(item: Item, steps: number): number {
+  const unlogged =
+    (steps * (item.factor - 1)) / (item.base * item.factor ** item.owned) + 1;
+  return Math.floor(log(item.factor, unlogged));
 }
 
 export function formatSteps(steps: number) {

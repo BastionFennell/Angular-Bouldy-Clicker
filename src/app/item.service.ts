@@ -40,15 +40,17 @@ export class ItemService {
     this.items = newItems;
   };
 
-  buy = (itemName: string) => {
-    this.stepsService.pay(getPrice(this.items[itemName]));
+  buy = (itemName: string, amount: number | string) => {
+    this.stepsService.pay(
+      getPrice(this.items[itemName], amount, this.stepsService.steps)
+    );
     const item = this.items[itemName];
 
     this.items = {
       ...this.items,
       [itemName]: {
         ...item,
-        owned: item.owned + 1,
+        owned: item.owned + amount,
       },
     };
   };

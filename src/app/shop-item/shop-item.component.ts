@@ -16,6 +16,7 @@ import { Item } from '../item.service';
   styleUrls: ['./item-pictures.css', './shop-item.component.css'],
 })
 export class ShopItemComponent implements OnInit {
+  @Input() buyAmount: number | string;
   @Input() item: Item;
   @Input() steps: number;
   @Output() onBuyEvent = new EventEmitter<string>();
@@ -23,13 +24,13 @@ export class ShopItemComponent implements OnInit {
 
   constructor() {}
 
-  canBuy = () => this.steps >= getPrice(this.item);
+  canBuy = () => this.steps >= getPrice(this.item, this.buyAmount, this.steps);
 
-  getPrice = () => getPrice(this.item);
+  getPrice = () => getPrice(this.item, this.buyAmount, this.steps);
 
   onBuy = () => {
     if (this.canBuy()) {
-      this.onBuyEvent.emit(this.item.id);
+      this.onBuyEvent.emit(this.item.id, this.buyAmount, this.steps);
     }
   };
 

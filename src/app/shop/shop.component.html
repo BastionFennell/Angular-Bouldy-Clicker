@@ -10,6 +10,6 @@
 </div>
 <div class="shop__item-list" >
   <div *ngFor="let item of getItems()">
-    <app-shop-item [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>
+    <app-shop-item [buyAmount]="buyAmount" [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>
   </div>
 </div>

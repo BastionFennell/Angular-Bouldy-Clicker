@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { StepsService } from '../steps.service';
 import { Item, ItemService } from '../item.service';
+import { getBuyAmount } from '../utils';
 
 @Component({
   selector: 'app-shop',
@@ -54,5 +55,13 @@ export class ShopComponent implements OnInit {
   getSteps = () => this.stepsService.steps;
   getStepsPerSecond = () => this.itemService.getIncrement();
   onChangeBuyAmount = (amount: number | string) => (this.buyAmount = amount);
-  onBuy = (item: string) => this.itemService.buy(item);
+  onBuy = (item: string) =>
+    this.itemService.buy(
+      item,
+      getBuyAmount(
+        this.itemService.items[item],
+        this.buyAmount,
+        this.stepsService.steps
+      )
+    );
 }
