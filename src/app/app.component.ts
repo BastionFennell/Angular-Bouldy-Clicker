@@ -44,7 +44,14 @@ export class AppComponent {
   };
 
   openSettingsModal = () => {
-    this.dialog.open(SettingsComponent);
+    this.dialog.open(SettingsComponent, {
+      data: {
+        clearData: () => {
+          this.itemService.clear();
+          this.stepsService.clear();
+        },
+      },
+    });
   };
 
   getSteps = () => this.stepsService.steps;

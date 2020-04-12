@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export class StepsService {
   steps = 0;
 
+  clear() {
+    this.steps = 0;
+  }
+
   load(steps: number) {
     this.steps = steps;
   }
