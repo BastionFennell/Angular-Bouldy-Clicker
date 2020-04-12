@@ -21,7 +21,7 @@ export interface Item {
   providedIn: 'root',
 })
 export class ItemService {
-  items = JSON.parse(JSON.stringify(defaultItems));
+  items = JSON.parse(JSON.stringify(defaultItems)) as { [key: string]: Item };
 
   constructor(private stepsService: StepsService) {}
 
