@@ -8,6 +8,7 @@
   </div>
   <div class="shop__shop-item-info shop__shop-item-info--unrevealed" *ngIf="!item.revealed">
     ???
+    <div class="shop__shop-item-price"> {{getPrice() | number}} Steps </div>
   </div>
   <div class="shop__shop-item-owned" *ngIf="item.revealed">
     {{item.owned}}

@@ -47,7 +47,7 @@ h3 {
 
 .shop__shop-item-subtext {
   color: #3e3e3e;
-  font-size: .8em;
+  font-size: 16px;
   font-style: italic;
 }
 
@@ -58,10 +58,11 @@ h3 {
 }
 
 .shop__shop-item-info--unrevealed {
-  align-self: center;
   font-size: 50px;
   font-weight: bold;
+  justify-content: space-between;
   padding-left: 20px;
+  padding-top: 25px;
 }
 
 .shop__shop-item-image {
@@ -81,3 +82,9 @@ h3 {
  margin-top: auto;
  padding-bottom: 10px;
 }
+
+.shop__shop-item-info--unrevealed .shop__shop-item-price {
+  font-weight: normal;
+  font-size: 16px;
+}
+
