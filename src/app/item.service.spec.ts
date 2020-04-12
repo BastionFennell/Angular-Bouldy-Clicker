@@ -1,9 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ItemService } from './item.service';
+import { StepsService } from './steps.service';
 
 describe('ItemService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: StepsService,
+          useValue: { steps: 10 },
+        },
+      ],
+    })
+  );
 
   it('should be created', () => {
     const service: ItemService = TestBed.get(ItemService);
@@ -44,6 +54,8 @@ describe('ItemService', () => {
         subtext: 'sub',
       },
     };
+
+    service.stepsService.steps = 10;
 
     service.load(loadedItems, 1);
     const afford = service.items.revealedAfford;

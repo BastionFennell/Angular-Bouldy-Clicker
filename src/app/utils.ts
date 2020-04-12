@@ -21,13 +21,14 @@ export function numberWithCommas(x: number | string) {
 }
 
 const itemUpdate = [
+  (items: { [key: string]: Item }) => items,
   (items: { [key: string]: Item }, steps: number) => {
     const keys = Object.keys(items);
     let newItems = Object.assign({}, items);
 
     for (let i = 0; i < keys.length; i++) {
       const item = newItems[keys[i]];
-      if (item.owned || steps > item.base) {
+      if (item.owned || steps >= item.base) {
         newItems = {
           ...newItems,
           [keys[i]]: {
@@ -52,6 +53,7 @@ export function updateItemsToVersion(
   for (let i = currentVersion; i < newVersion; i++) {
     newItems = itemUpdate[i](newItems, steps);
   }
+  console.log(newItems);
 
   return newItems;
 }
