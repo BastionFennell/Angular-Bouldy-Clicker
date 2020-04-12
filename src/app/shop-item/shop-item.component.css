@@ -79,12 +79,17 @@ h3 {
 }
 
 .shop__shop-item-price {
- margin-top: auto;
- padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+.shop__shop-item-price-max {
+  margin-right: 5px;
 }
 
 .shop__shop-item-info--unrevealed .shop__shop-item-price {
   font-weight: normal;
   font-size: 16px;
 }
-

@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { getPrice } from '../utils';
+import { getBuyAmount, getPrice } from '../utils';
 import { Item } from '../item.service';
 
 @Component({
@@ -24,13 +24,17 @@ export class ShopItemComponent implements OnInit {
 
   constructor() {}
 
-  canBuy = () => this.steps >= getPrice(this.item, this.buyAmount, this.steps);
+  canBuy = () =>
+    this.steps >= getPrice(this.item, this.buyAmount, this.steps) &&
+    getPrice(this.item, this.buyAmount, this.steps) !== 0;
 
   getPrice = () => getPrice(this.item, this.buyAmount, this.steps);
 
+  getAmount = () => getBuyAmount(this.item, this.buyAmount, this.steps);
+
   onBuy = () => {
     if (this.canBuy()) {
-      this.onBuyEvent.emit(this.item.id, this.buyAmount, this.steps);
+      this.onBuyEvent.emit(this.item.id);
     }
   };
 
