@@ -13,6 +13,8 @@ export class ShopComponent implements OnInit {
   @Input() onToggleShow: () => void;
   itemMemoCheck: { [key: string]: Item };
   itemMemo: Item[];
+  revealedItemMemo: Item[];
+  unrevealedItemMemo: Item[];
 
   constructor(
     private stepsService: StepsService,
@@ -21,15 +23,28 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {}
 
+  getRevealedItems = () => {
+    return Object.entries(this.itemService.items)
+      .filter(([key, value]) => value.revealed)
+      .map(([key, value]) => ({
+        id: key,
+        ...value,
+      }));
+  };
+  getUnrevealedItems = () => {
+    return Object.entries(this.itemService.items)
+      .filter(([key, value]) => !value.revealed)
+      .slice(0, 2)
+      .map(([key, value]) => ({
+        id: key,
+        ...value,
+      }));
+  };
+
   getItems = () => {
-    if (this.itemService.items !== this.itemMemoCheck) {
+    if ((this.itemMemoCheck = this.itemService.items)) {
       this.itemMemoCheck = this.itemService.items;
-      this.itemMemo = Object.entries(this.itemService.items).map(
-        ([key, value]) => ({
-          id: key,
-          ...value,
-        })
-      );
+      this.itemMemo = this.getRevealedItems().concat(this.getUnrevealedItems());
     }
 
     return this.itemMemo;

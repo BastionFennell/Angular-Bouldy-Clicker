@@ -10,6 +10,7 @@ export interface Item {
   name: string;
   owned: number;
   power: number;
+  revealed: boolean;
   subtext: string;
 }
 
@@ -25,6 +26,7 @@ export class ItemService {
       name: 'Nectar',
       owned: 0,
       power: 0,
+      revealed: false,
       subtext: 'Adds 1 step per click',
     },
     dionysus: {
@@ -35,6 +37,7 @@ export class ItemService {
       name: "Dionysus' Boon",
       owned: 0,
       power: 1,
+      revealed: false,
       subtext: 'Adds 1 step per second',
     },
     athena: {
@@ -45,6 +48,7 @@ export class ItemService {
       name: "Athena's Boon",
       owned: 0,
       power: 5,
+      revealed: false,
       subtext: 'Adds 5 steps per second',
     },
     poseidon: {
@@ -55,6 +59,7 @@ export class ItemService {
       name: "Poseidon's Boon",
       owned: 0,
       power: 10,
+      revealed: false,
       subtext: 'Adds 10 steps per second',
     },
     ares: {
@@ -64,6 +69,7 @@ export class ItemService {
       name: "Ares' Boon",
       owned: 0,
       power: 50,
+      revealed: false,
       subtext: 'Adds 50 steps per second',
     },
     aphrodite: {
@@ -74,6 +80,7 @@ export class ItemService {
       name: "Aphrodite's Boon",
       owned: 0,
       power: 100,
+      revealed: false,
       subtext: 'Adds 100 steps per second',
     },
     artemis: {
@@ -83,6 +90,7 @@ export class ItemService {
       name: "Artemis' Boon",
       owned: 0,
       power: 250,
+      revealed: false,
       subtext: 'Adds 250 steps per second',
     },
     zeus: {
@@ -92,6 +100,7 @@ export class ItemService {
       name: "Zeus's Boon",
       owned: 0,
       power: 500,
+      revealed: false,
       subtext: 'Adds 500 steps per second',
     },
     demeter: {
@@ -101,6 +110,7 @@ export class ItemService {
       name: "Demeters's Boon",
       owned: 0,
       power: 1000,
+      revealed: false,
       subtext: 'Adds 1000 steps per second',
     },
     chaos: {
@@ -110,6 +120,7 @@ export class ItemService {
       name: "Chaos's Boon",
       owned: 0,
       power: 2387,
+      revealed: false,
       subtext: 'Adds 2387 steps per second',
     },
     daedalus: {
@@ -119,6 +130,7 @@ export class ItemService {
       name: "Daedalus's Boon",
       owned: 0,
       power: 5000,
+      revealed: false,
       subtext: 'Adds 5000 steps per second',
     },
     sisyphus: {
@@ -129,9 +141,10 @@ export class ItemService {
       name: "Sisyphus' Boon",
       owned: 0,
       power: 10000,
+      revealed: false,
       subtext: 'Adds 10000 steps per second',
     },
-  };
+  } as { [key: string]: Item };
 
   constructor(private stepsService: StepsService) {}
 

@@ -3,7 +3,10 @@
 </button>
 <app-step-counter class="shop__step-counter" [steps]="getSteps()" [stepsPerSecond]="getStepsPerSecond()"></app-step-counter>
 <div class="shop__item-list" >
-  <div *ngFor="let item of getItems()">
+  <div *ngFor="let item of getRevealedItems()">
+    <app-shop-item [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>
+  </div>
+  <div *ngFor="let item of getUnrevealedItems()">
     <app-shop-item [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>
   </div>
 </div>
