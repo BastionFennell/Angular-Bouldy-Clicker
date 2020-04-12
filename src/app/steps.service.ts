@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class StepsService {
-  steps = 0;
+  steps = 1000000;
 
   clear() {
-    this.steps = 0;
+    this.steps = 100000;
   }
 
   load(steps: number) {

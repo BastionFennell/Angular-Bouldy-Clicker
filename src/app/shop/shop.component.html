@@ -2,6 +2,12 @@
   <div> x </div>
 </button>
 <app-step-counter class="shop__step-counter" [steps]="getSteps()" [stepsPerSecond]="getStepsPerSecond()"></app-step-counter>
+<div class="shop__buy-amount">
+  <div (click)="onChangeBuyAmount(1)" class="shop__buy-amount-multiplier" [class.shop__buy-amount-multiplier--selected]="buyAmount === 1"> x1 </div>
+  <div (click)="onChangeBuyAmount(10)" class="shop__buy-amount-multiplier" [class.shop__buy-amount-multiplier--selected]="buyAmount === 10"> x10 </div>
+  <div (click)="onChangeBuyAmount(25)" class="shop__buy-amount-multiplier" [class.shop__buy-amount-multiplier--selected]="buyAmount === 25"> x25 </div>
+  <div (click)="onChangeBuyAmount('max')" class="shop__buy-amount-multiplier" [class.shop__buy-amount-multiplier--selected]="buyAmount === 'max'"> Max </div>
+</div>
 <div class="shop__item-list" >
   <div *ngFor="let item of getItems()">
     <app-shop-item [item]="item" (onBuyEvent)="onBuy($event)" [steps]="getSteps()"></app-shop-item>

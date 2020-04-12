@@ -31,6 +31,45 @@
   width: 80%;
 }
 
+.shop__buy-amount {
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.shop__buy-amount-multiplier {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.shop__buy-amount-multiplier:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.shop__buy-amount-multiplier:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.shop__buy-amount-multiplier--selected {
+  font-weight: bold;
+  background-color: #e2e2e2;
+}
+
+.shop__buy-amount-multiplier:not(:first-child) {
+  border-left: 1px solid black;
+}
+
 .shop__item-list {
   overflow-y: scroll;
 }

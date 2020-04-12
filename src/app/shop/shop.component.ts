@@ -11,6 +11,7 @@ import { Item, ItemService } from '../item.service';
 export class ShopComponent implements OnInit {
   @Input() show: boolean;
   @Input() onToggleShow: () => void;
+  buyAmount = 1 as number | string;
   itemMemoCheck: { [key: string]: Item };
   itemMemo: Item[];
   revealedItemMemo: Item[];
@@ -52,5 +53,6 @@ export class ShopComponent implements OnInit {
   };
   getSteps = () => this.stepsService.steps;
   getStepsPerSecond = () => this.itemService.getIncrement();
+  onChangeBuyAmount = (amount: number | string) => (this.buyAmount = amount);
   onBuy = (item: string) => this.itemService.buy(item);
 }
