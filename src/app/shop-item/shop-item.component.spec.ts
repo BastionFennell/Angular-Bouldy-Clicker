@@ -8,14 +8,23 @@ describe('ShopItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShopItemComponent ]
-    })
-    .compileComponents();
+      declarations: [ShopItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ShopItemComponent);
     component = fixture.componentInstance;
+    component.item = {
+      base: 10,
+      description: 'Show Bouldy you really care!',
+      factor: 1.07,
+      name: 'Nectar',
+      owned: 0,
+      power: 0,
+      revealed: false,
+      subtext: 'Adds 1 step per click',
+    };
     fixture.detectChanges();
   });
 

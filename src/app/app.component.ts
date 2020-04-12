@@ -7,6 +7,8 @@ import { ItemService } from './item.service';
 
 import { GiveCreditComponent } from './give-credit/give-credit.component';
 
+import { VERSION } from './constants';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,11 +46,12 @@ export class AppComponent {
   getStepsPerSecond = () => this.itemService.getIncrement();
 
   loadSave = () => {
+    const version = parseInt(localStorage.getItem('version'), 10);
     const steps = parseInt(localStorage.getItem('steps'), 10);
     const items = JSON.parse(localStorage.getItem('items'));
 
     this.stepsService.load(steps);
-    this.itemService.load(items);
+    this.itemService.load(items, version);
   };
 
   onTick = (ticks: number) => {
@@ -59,7 +62,7 @@ export class AppComponent {
     if (ticks % 10 === 0) {
       localStorage.setItem('steps', this.stepsService.steps.toString());
       localStorage.setItem('items', JSON.stringify(this.itemService.items));
-      localStorage.setItem('version', '1');
+      localStorage.setItem('version', VERSION.toString());
     }
   };
 

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+
 import { StepsService } from './steps.service';
-import { getPrice } from './utils';
+import { getPrice, updateItemsToVersion } from './utils';
+import { VERSION } from './constants';
 
 export interface Item {
   base: number;
@@ -148,8 +150,17 @@ export class ItemService {
 
   constructor(private stepsService: StepsService) {}
 
-  load = (items: any) => {
-    this.items = items;
+  load = (items: any, version: number) => {
+    let newItems = items;
+    if (version < VERSION) {
+      newItems = updateItemsToVersion(
+        items,
+        version,
+        VERSION,
+        this.stepsService.steps
+      );
+    }
+    this.items = newItems;
   };
 
   buy = (itemName: string) => {

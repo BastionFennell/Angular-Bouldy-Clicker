@@ -8,14 +8,14 @@ describe('StepCounterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepCounterComponent ]
-    })
-    .compileComponents();
+      declarations: [StepCounterComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(StepCounterComponent);
     component = fixture.componentInstance;
+    component.steps = 100;
     fixture.detectChanges();
   });
 

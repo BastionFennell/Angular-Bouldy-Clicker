@@ -19,3 +19,39 @@ export function formatSteps(steps: number) {
 export function numberWithCommas(x: number | string) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+const itemUpdate = [
+  (items: { [key: string]: Item }, steps: number) => {
+    const keys = Object.keys(items);
+    let newItems = Object.assign({}, items);
+
+    for (let i = 0; i < keys.length; i++) {
+      const item = newItems[keys[i]];
+      if (item.owned || steps > item.base) {
+        newItems = {
+          ...newItems,
+          [keys[i]]: {
+            ...item,
+            revealed: true,
+          },
+        };
+      }
+    }
+
+    return newItems;
+  },
+];
+
+export function updateItemsToVersion(
+  items: { [key: string]: Item },
+  currentVersion: number,
+  newVersion: number,
+  steps: number
+) {
+  let newItems = items;
+  for (let i = currentVersion; i < newVersion; i++) {
+    newItems = itemUpdate[i](newItems, steps);
+  }
+
+  return newItems;
+}

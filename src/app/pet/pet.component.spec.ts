@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PetComponent } from './pet.component';
+import { StepCounterComponent } from '../step-counter/step-counter.component';
 
 describe('PetComponent', () => {
   let component: PetComponent;
@@ -8,9 +10,9 @@ describe('PetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PetComponent ]
-    })
-    .compileComponents();
+      declarations: [PetComponent, StepCounterComponent],
+      imports: [BrowserAnimationsModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
