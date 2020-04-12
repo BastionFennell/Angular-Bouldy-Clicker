@@ -57,6 +57,13 @@ h3 {
   flex-grow: 1;
 }
 
+.shop__shop-item-info--unrevealed {
+  align-self: center;
+  font-size: 50px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
 .shop__shop-item-image {
   align-self: flex-end;
   background-size: cover;
@@ -64,6 +71,10 @@ h3 {
   height: 125px;
   margin: 0 10px -5px 0;
   width: 120px;
+}
+
+.shop__shop-item-image--unrevealed {
+  filter: brightness(0);
 }
 
 .shop__shop-item-price {

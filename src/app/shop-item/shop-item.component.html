@@ -1,12 +1,15 @@
 <div class="shop__shop-item" [class.shop__shop-item--disabled]="!canBuy()" (click)="onBuy()">
-  <div [class]="'shop__shop-item-image shop__shop-item-image--' + item.id"></div>
-  <div class="shop__shop-item-info">
+  <div [class]="'shop__shop-item-image shop__shop-item-image--' + item.id" [class.shop__shop-item-image--unrevealed]="!item.revealed"></div>
+  <div class="shop__shop-item-info" *ngIf="item.revealed">
     <h3> {{item.name}} </h3>
     <div> {{item.description}} </div>
     <div class="shop__shop-item-subtext"> {{item.subtext}} </div>
     <div class="shop__shop-item-price"> {{getPrice() | number}} Steps </div>
   </div>
-  <div class="shop__shop-item-owned">
+  <div class="shop__shop-item-info shop__shop-item-info--unrevealed" *ngIf="!item.revealed">
+    ???
+  </div>
+  <div class="shop__shop-item-owned" *ngIf="item.revealed">
     {{item.owned}}
   </div>
 </div>

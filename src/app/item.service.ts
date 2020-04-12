@@ -171,7 +171,13 @@ export class ItemService {
     for (let i = 0; i < length; i++) {
       const item = this.items[keys[i]];
       if (!item.revealed && item.base <= steps) {
-        item.revealed = true;
+        this.items = {
+          ...this.items,
+          [keys[i]]: {
+            ...item,
+            revealed: true,
+          },
+        };
       } else if (item.base > steps) {
         break;
       }

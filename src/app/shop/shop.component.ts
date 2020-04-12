@@ -44,7 +44,6 @@ export class ShopComponent implements OnInit {
 
   getItems = () => {
     if (this.itemMemoCheck !== this.itemService.items) {
-      console.log('Redoot');
       this.itemMemoCheck = this.itemService.items;
       this.itemMemo = this.getRevealedItems().concat(this.getUnrevealedItems());
     }
