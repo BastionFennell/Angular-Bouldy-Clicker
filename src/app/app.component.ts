@@ -6,6 +6,7 @@ import { StepsService } from './steps.service';
 import { ItemService } from './item.service';
 
 import { GiveCreditComponent } from './give-credit/give-credit.component';
+import { SettingsComponent } from './settings/settings.component';
 
 import { VERSION } from './constants';
 
@@ -35,11 +36,15 @@ export class AppComponent {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => this.openModal());
+    setTimeout(() => this.openGiveCreditModal());
   }
 
-  openModal = () => {
+  openGiveCreditModal = () => {
     this.dialog.open(GiveCreditComponent);
+  };
+
+  openSettingsModal = () => {
+    this.dialog.open(SettingsComponent);
   };
 
   getSteps = () => this.stepsService.steps;
