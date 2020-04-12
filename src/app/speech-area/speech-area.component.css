@@ -14,9 +14,10 @@
 }
 
 .speech__speaker img {
-  height: 90vh;
   margin-bottom: -10px;
-  margin-right: -200px;
+  margin-right: -10vw;
+  max-width: 500px;
+  width: 40vw;
 }
 
 .speech__background {
@@ -25,19 +26,20 @@
   background-position: bottom;
   background-size: contain;
   bottom: 15px;
-  height: 50vh;
-  max-width: 1000px;
+  height: 33vw;
+  max-height: 421px;
+  max-width: 900px;
   position: relative;
   width: 80vw;
 }
 
 .speech__text {
-  bottom: 30%;
   font-size: 25px;
   font-weight: bold;
   left: 20%;
   line-height: 1.7;
   position: absolute;
+  top: 50%;
   width: 70%;
 }
 
@@ -56,3 +58,68 @@
   font-size: 14px;
   color: #f05e23;
 }
+
+
+@media (max-width: 900px) {
+  .speech__name {
+    font-size: 20px;
+    top: 26%;
+  }
+
+  .speech__name--subtext {
+    font-size: 10px;
+  }
+
+  .speech__text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .speech__speaker img {
+    margin-right: -20vw;
+  }
+  .speech__name {
+    font-size: 16px;
+    top: 26%;
+  }
+
+  .speech__text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .speech__speaker {
+    position: absolute;
+    width: 100vw;
+  }
+
+  .speech__speaker img {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-right: -35vw;
+    width: 100vw;
+  }
+
+  .speech__background {
+    width: 100vw;
+    height: 47vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .speech__name {
+    font-size: 12px;
+  }
+
+  .speech__name-subtext {
+    font-size: 8px;
+  }
+
+  .speech__text {
+    font-size: 11px;
+  }
+}
+
