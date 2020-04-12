@@ -69,7 +69,6 @@ export class AppComponent {
   onTick = (ticks: number) => {
     const tickPower = this.itemService.getIncrement();
     this.stepsService.step(tickPower / 10);
-    this.itemService.step(this.stepsService.steps);
 
     if (ticks % 10 === 0) {
       localStorage.setItem('steps', this.stepsService.steps.toString());

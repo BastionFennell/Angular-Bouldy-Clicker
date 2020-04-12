@@ -40,7 +40,7 @@ export class ItemService {
     this.items = newItems;
   };
 
-  buy = (itemName: string, amount: number | string) => {
+  buy = (itemName: string, amount: number) => {
     this.stepsService.pay(
       getPrice(this.items[itemName], amount, this.stepsService.steps)
     );
@@ -51,27 +51,9 @@ export class ItemService {
       [itemName]: {
         ...item,
         owned: item.owned + amount,
+        revealed: true,
       },
     };
-  };
-
-  step = (steps: number) => {
-    const keys = Object.keys(this.items);
-    const length = keys.length;
-    for (let i = 0; i < length; i++) {
-      const item = this.items[keys[i]];
-      if (!item.revealed && item.base <= steps) {
-        this.items = {
-          ...this.items,
-          [keys[i]]: {
-            ...item,
-            revealed: true,
-          },
-        };
-      } else if (item.base > steps) {
-        break;
-      }
-    }
   };
 
   getClickPower = () => {

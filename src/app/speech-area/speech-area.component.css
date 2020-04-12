@@ -1,0 +1,58 @@
+::ng-deep .invisible mat-dialog-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.speech {
+  align-items: flex-end;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.speech__speaker img {
+  height: 90vh;
+  margin-bottom: -10px;
+  margin-right: -200px;
+}
+
+.speech__background {
+  background-image: url('../../assets/text-area.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  bottom: 15px;
+  height: 50vh;
+  max-width: 1000px;
+  position: relative;
+  width: 80vw;
+}
+
+.speech__text {
+  bottom: 30%;
+  font-size: 25px;
+  font-weight: bold;
+  left: 20%;
+  line-height: 1.7;
+  position: absolute;
+  width: 70%;
+}
+
+.speech__name {
+  bottom: 62%;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  left: 20%;
+  position: relative;
+  top: 28%;
+  width: 30%;
+}
+
+.speech__name-subtext {
+  font-size: 14px;
+  color: #f05e23;
+}

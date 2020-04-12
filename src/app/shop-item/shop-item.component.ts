@@ -33,9 +33,7 @@ export class ShopItemComponent implements OnInit {
   getAmount = () => getBuyAmount(this.item, this.buyAmount, this.steps);
 
   onBuy = () => {
-    if (this.canBuy()) {
-      this.onBuyEvent.emit(this.item.id);
-    }
+    this.onBuyEvent.emit(this.item.id);
   };
 
   ngOnInit() {}

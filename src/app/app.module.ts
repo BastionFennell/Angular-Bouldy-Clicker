@@ -13,6 +13,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 import { GiveCreditComponent } from './give-credit/give-credit.component';
 import { StepCounterComponent } from './step-counter/step-counter.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SpeechAreaComponent } from './speech-area/speech-area.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,13 @@ import { SettingsComponent } from './settings/settings.component';
     GiveCreditComponent,
     StepCounterComponent,
     SettingsComponent,
+    SpeechAreaComponent,
   ],
-  entryComponents: [GiveCreditComponent, SettingsComponent],
+  entryComponents: [
+    GiveCreditComponent,
+    SettingsComponent,
+    SpeechAreaComponent,
+  ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,

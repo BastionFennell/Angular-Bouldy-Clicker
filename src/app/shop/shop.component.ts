@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { StepsService } from '../steps.service';
 import { Item, ItemService } from '../item.service';
 import { getBuyAmount } from '../utils';
+import { SpeechAreaComponent } from '../speech-area/speech-area.component';
 
 @Component({
   selector: 'app-shop',
@@ -20,7 +22,8 @@ export class ShopComponent implements OnInit {
 
   constructor(
     private stepsService: StepsService,
-    private itemService: ItemService
+    private itemService: ItemService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {}
@@ -55,13 +58,22 @@ export class ShopComponent implements OnInit {
   getSteps = () => this.stepsService.steps;
   getStepsPerSecond = () => this.itemService.getIncrement();
   onChangeBuyAmount = (amount: number | string) => (this.buyAmount = amount);
-  onBuy = (item: string) =>
+  onBuy = (item: string) => {
+    const itemData = this.itemService.items[item];
+
+    if (itemData.owned === 0) {
+      this.dialog.open(SpeechAreaComponent, {
+        panelClass: 'invisible',
+        data: {
+          eventOwner: item,
+          eventName: 'intro',
+        },
+      });
+    }
+
     this.itemService.buy(
       item,
-      getBuyAmount(
-        this.itemService.items[item],
-        this.buyAmount,
-        this.stepsService.steps
-      )
+      getBuyAmount(itemData, this.buyAmount, this.stepsService.steps)
     );
+  };
 }
